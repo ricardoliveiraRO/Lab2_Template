@@ -10,6 +10,11 @@ import java.util.Collection;
  *
  */
 public interface Tree<E> {
+
+
+  void move(Position<E> existingPosition, Position<E> newParent);
+
+
   /**
    * @return the number of nodes in the tree.
    */

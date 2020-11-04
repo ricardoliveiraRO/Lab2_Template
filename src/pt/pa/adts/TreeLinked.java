@@ -20,6 +20,8 @@ public class TreeLinked<E> implements Tree<E> {
         this.root = new TreeNode(root);
     }
 
+
+
     @Override
     public int size() {
         if (root == null) {
@@ -177,6 +179,13 @@ public class TreeLinked<E> implements Tree<E> {
             }
         }
         return elements;
+    }
+
+    public void move(Position<E> existingPosition, Position<E> newParent){
+        TreeNode tmp = checkPosition(existingPosition);
+        remove(existingPosition);
+        checkPosition(newParent).children.add(tmp);
+        tmp.parent = checkPosition(newParent);
     }
 
     /*
